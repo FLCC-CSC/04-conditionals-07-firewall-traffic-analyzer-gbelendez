@@ -16,15 +16,15 @@
 ########## ENTER YER CODE BELOW THIS LINE ##########
 print("=== Network Traffic Security Analyzer ===\n")
 
-# Get user input
+
 port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
 transfer_size = int(input("Enter the data transfer size in megabytes (MB): "))
 
 print("\nFIREWALL LOG:")
 print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
 
-# Conditional logic for risk analysis
-if (port_number in [22, 3389]) and transfer_size > 500:
+
+if port_number == 22 or port_number == 3389:
     print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
 elif port_number == 80 and transfer_size > 100:
     print("Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.")
